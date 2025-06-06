@@ -1,9 +1,11 @@
 import { ChatModelAdapter, ChatModelRunOptions, ChatModelRunResult} from "@assistant-ui/react";
 
-class DeepSeekChatModelAdapter implements ChatModelAdapter
-{
-    run(options: ChatModelRunOptions): Promise<ChatModelRunResult> | AsyncGenerator<ChatModelRunResult, void> {
-        throw new Error("Method not implemented.");
-    }
-
+export class DeepSeekChatModelAdapter implements ChatModelAdapter {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  run(_options: ChatModelRunOptions):
+    | Promise<ChatModelRunResult>
+    | AsyncGenerator<ChatModelRunResult, void> {
+    // TODO: integrate with backend service
+    throw new Error("Method not implemented.");
+  }
 }
