@@ -1,5 +1,10 @@
 import { Assistant } from "./assistant";
+import { AuthProvider } from "@/contexts/auth";
 
 export default function Home() {
-  return <Assistant />;
+  return (
+    <AuthProvider>
+      <Assistant />
+    </AuthProvider>
+  );
 }
