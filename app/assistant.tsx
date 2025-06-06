@@ -37,7 +37,7 @@ export const Assistant = () => {
   return (
     <AssistantRuntimeProvider runtime={runtime}>
       <div className="grid h-dvh grid-cols-[240px_1fr] gap-x-2">
-        <div className="flex flex-col">
+        <div className="grid h-dvh grid-rows-[1fr_auto] gap-x-2">
           <ThreadList />
           <UserStatus />
         </div>
