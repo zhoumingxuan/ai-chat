@@ -31,8 +31,8 @@ export const SyntaxHighlighter: FC<HighlighterProps> = ({
   language,
   theme = "github-dark",
   className,
-  node: _node,
-  components: _components,
+  node: _node, // eslint-disable-line @typescript-eslint/no-unused-vars
+  components: _components, // eslint-disable-line @typescript-eslint/no-unused-vars
   ...props
 }) => {
   const BASE_STYLES =

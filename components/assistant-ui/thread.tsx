@@ -17,8 +17,6 @@ import {
   PencilIcon,
   RefreshCwIcon,
   SendHorizontalIcon,
-  Search,
-  Globe,
   FlaskConical
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -94,49 +92,20 @@ const ThreadWelcome: FC = () => {
   );
 };
 
-const ThreadWelcomeSuggestions: FC = () => {
-  return (
-    <div className="mt-3 flex w-full items-stretch justify-center gap-4">
-      <ThreadPrimitive.Suggestion
-        className="hover:bg-muted/80 flex max-w-sm grow basis-0 flex-col items-center justify-center rounded-lg border p-3 transition-colors ease-in"
-        prompt="What is the weather in Tokyo?"
-        method="replace"
-        autoSend
-      >
-        <span className="line-clamp-2 text-ellipsis text-sm font-semibold">
-          What is the weather in Tokyo?
-        </span>
-      </ThreadPrimitive.Suggestion>
-      <ThreadPrimitive.Suggestion
-        className="hover:bg-muted/80 flex max-w-sm grow basis-0 flex-col items-center justify-center rounded-lg border p-3 transition-colors ease-in"
-        prompt="What is assistant-ui?"
-        method="replace"
-        autoSend
-      >
-        <span className="line-clamp-2 text-ellipsis text-sm font-semibold">
-          What is assistant-ui?
-        </span>
-      </ThreadPrimitive.Suggestion>
-    </div>
-  );
-};
 
 const Composer: FC = () => {
 
   const [active, setActive] = useState<string | null>(null);
 
    /** 切换激活状态：再次点击同按钮=关闭；点击其他按钮=互斥切换 */
-   const toggle = (key: "search" | "research") =>
-   setActive(prev => (prev === key ? null : key));
+  const toggle = (key: "search" | "research") =>
+  setActive(prev => (prev === key ? null : key));
 
-   const onSearchClick=()=>{
-      
-      toggle("search");
-   }
-
-   const onReSearchClick=()=>{
-
+  const onReSearchClick=()=>{
       toggle("research");
+      if (active !== "research") {
+        // TODO: notify backend that deep research is enabled
+      }
    }
    
 
